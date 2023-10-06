@@ -19,20 +19,23 @@ export const notelist = () => {
 const render = () => {
     document.getElementById('app').innerHTML = 
     `
-    <div>
+    <div style="display: flex; justify-content: flex-end;">
+        <div><input id="search" class="search-input" placeholder="ค้นหาสมุดโน็ต" />
+        </div>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+        <div class="drop-down-tag">
+            <div id="selected-option">เลือกจาก tag</div>
+            <div id="tag-search"></div>
+        </div>
+    </div>
+
+    <div class="container01">
         <button id = "newest-button">ใหม่ที่สุด</button>
         <button id = "max-view-button">ดูมากที่สุด</button>
     </div>
-    <div style = "display: flex; justify-content: flex-end;">
-        <div class = "drop-down-tag">
-            <div id = "selected-option">เลือกจาก tag</div>
-            <div id = tag-search>
-            </div>
-            </div>
-        </div> 
-        <input id = "search" placeholder=" ค้นหาสมุดโน็ต" />
-    </div>
     <section id = "note-list"></section>
+    
     `;  
 }
 

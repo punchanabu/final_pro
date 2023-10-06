@@ -21,6 +21,9 @@ const appendNote = (datas,list) => {
         `   
             <img src = 'http://localhost:3222/files/${data.attachments[0]}'/>
             <h1>${data.name}</h1>
+            <div class = "tag-list">
+                ${data.tags.map(tag => `<span class = "tag">${tag}</span>`).join('')}
+            </div>
             <div class = "view">
                 <img src = "../assets/1.png"/>
                 <img src = "../assets/view.png" id = "view-icon"/>
@@ -54,3 +57,4 @@ const clear = (list) => {
     }
 
 }
+

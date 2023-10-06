@@ -24,7 +24,7 @@ export const handleSubmit = () => {
     
     const name = document.getElementById('content-share-note-input').value;
     const description = document.getElementById('content-share-note-description').value;
-    const tags = document.getElementById('content-share-note-tag').value;
+    const tags = getAllTags();
 
     const noteData = {
         name,
@@ -38,4 +38,15 @@ export const handleSubmit = () => {
     const files = Array.from(fileInputs.files)
 
     create(noteData,files)
+}
+
+const getAllTags = () => {
+    const tagElements = document.querySelectorAll('.uploaded-tag');
+    const tags = [];
+
+    tagElements.forEach(tagElement => {
+        tags.push(tagElement.getAttribute('data-tag'));
+    });
+
+    return tags;
 }
